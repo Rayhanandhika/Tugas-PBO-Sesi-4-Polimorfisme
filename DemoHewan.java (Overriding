@@ -1,0 +1,29 @@
+class Hewan {
+    void bersuara() {
+        System.out.println("Hewan mengeluarkan suara");
+    }
+}
+
+class Kucing extends Hewan {
+    @Override
+    void bersuara() {
+        System.out.println("Kucing: Meong!");
+    }
+}
+
+class Anjing extends Hewan {
+    @Override
+    void bersuara() {
+        System.out.println("Anjing: Guk guk!");
+    }
+}
+
+public class DemoHewan {
+    public static void main(String[] args) {
+        Hewan h1 = new Kucing();
+        Hewan h2 = new Anjing();
+
+        h1.bersuara();
+        h2.bersuara();
+    }
+}
