@@ -1,0 +1,41 @@
+class Pegawai {
+    String nama;
+    int gaji;
+
+    Pegawai(String nama, int gaji) {
+        this.nama = nama;
+        this.gaji = gaji;
+    }
+
+    void tampil() {
+        System.out.println(nama + " memiliki gaji " + gaji);
+    }
+
+    void bonus(int jumlah) {
+        System.out.println(nama + " mendapat bonus sebesar " + jumlah);
+    }
+
+    void bonus(double persen) {
+        System.out.println(nama + " mendapat bonus sebesar " + (persen * gaji));
+    }
+}
+
+class Manager extends Pegawai {
+    Manager(String nama, int gaji) {
+        super(nama, gaji);
+    }
+
+    @Override
+    void tampil() {
+        System.out.println("Manager " + nama + " bergaji " + gaji);
+    }
+}
+
+public class DemoPegawai {
+    public static void main(String[] args) {
+        Pegawai p = new Manager("Rina", 10000000);
+        p.tampil();
+        p.bonus(1000000);
+        p.bonus(0.1);
+    }
+}
